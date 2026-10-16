@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '楷体', 'KaiTi', serif;
+}
+footer{
+    clear: both;
+    background-color: rgba(57, 91, 100, 0.9);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    /* position: relative; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.dxkg{
+    width: 100%;
+    height: 60px;
+}

@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '楷体', 'KaiTi', serif;
+}
+
+body {
+    font-size: 18px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dakuai {
+    display: block;
+    width: 100%;
+}
+
+.category {
+    display: block;
+}
+
+.wenan {
+    padding-top: 200px;
+    width: 100%;
+    padding: 1rem 10%;
+    text-indent: 2em;
+    margin-bottom: 100px;
+}
+
+.wenan .top {
+    margin-top: 40px;
+}
+
+.wenan .lef {
+    text-align: right;
+}
+
+.wenan p {
+    margin-top: 10px;
+}
+
+.wenan .bjtp {
+    margin: 0 auto;
+    width: 80%;
+    height: 150px;
+    background-image: url("../images/bjtp1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wenan .bjtp h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+    font-size: 39px;
+}
+
+.biaoti {
+    clear: both;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px soild #333;
+}
+
+.biaoti h2 {
+    margin: 0 auto;
+    padding-left: 50px;
+    font-size: 40px;
+    margin-left: 5%;
+}
+
+.biaoti .zsz {
+    margin-top: 150px;
+}
+
+.biaoti {
+    /* 基础布局 */
+    width: 100%;
+    /* 占满父容器宽度 */
+    box-sizing: border-box;
+    /* 盒模型优化，避免内边距影响宽度 */
+    padding: 20px 5%;
+    margin: 50px 0;
+
+    /* 视觉美化 */
+    background: rgba(255, 255, 255, 0.95);
+    /* 半透明背景 */
+    border-radius: 8px;
+    /* 圆角 */
+
+    /* 文字样式 */
+    line-height: 1.5;
+    /* 行高更舒适 */
+}
+
+.biaoti h2 {
+    display: block;
+    margin: 0;
+    /* 移除默认边距 */
+    font-size: 2.2rem;
+    /* 响应式字体大小（推荐使用 rem） */
+    color: #333;
+    /* 深灰文字更易读 */
+    position: relative;
+    /* 定位基准 */
+
+}
+
+.biaoti span {
+    font-size: 20px;
+}
+
+.kapian {
+    width: 100%;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    margin-left: 6%;
+}
+
+.card .front {
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.card .front::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 55%;
+    background: rgba(0, 0, 0, 0.45);
+    transform: translate(-50%, -50%);
+}
+
+.card .front p {
+    font-size: 15px;
+    position: absolute;
+    width: 400px;
+    top: 55%;
+    left: 50%;
+    transform: translatex(-50%) translateY(-50%) translateZ(60px);
+}
+
+.card .back {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #233f27;
+
+}
+
+.card .back {
+    padding: 20px;
+}
+
+.card .back .hero {
+    width: 250px;
+    border-bottom: 2px solid #b49758;
+    padding-bottom: 15px;
+}
+
+.card .back {
+    border-radius: 15px;
+}
+
+.card .back .hero h2 {
+    color: #f8fae4;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.card .back span {
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    background-color: #c09f5a;
+    line-height: 25px;
+    border-radius: 2px;
+    color: #191d20;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.card .back .desc {
+    text-indent: 2em;
+    font-size: 18px;
+    color: #fff;
+    text-align: left;
+    line-height: 30px;
+    padding: 15px 5px;
+    letter-spacing: 2px;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .front,
+.card .back {
+    backface-visibility: hidden;
+}
+
+.card .front,
+.card .back {
+    transition: transform 1.5s;
+}
+
+.card:hover .front {
+    transform: rotateY(-180deg);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+.card:hover .back {
+    transform: rotateY(0deg);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+.card .front,
+.card .back {
+    transform-style: preserve-3d;
+}
+
+.threeD {
+    backface-visibility: hidden;
+    transform: translateZ(60px);
+}
+
+.card .front::before {
+    transform: translate3d(-50%, -50%, 20px);
+}
+
+.card .back .desc .gvge {
+    text-indent: 2em;
+    width: 256px;
+}

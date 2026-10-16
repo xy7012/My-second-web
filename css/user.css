@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;  /* 改为纵向排列 */
+    align-items: center;     /* 保持水平居中 */
+    align-items: center;      /* 保持水平居中 */
+    padding: 20px 0;        /* 添加上下内边距 */
+    margin: 0;
+    background: #e7e7e7 url("../images/user-bg.png") center no-repeat fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    overflow: hidden;         /* 隐藏页面滚动条 */
+}
+
+.logout-alert {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background: rgb(31, 201, 36);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeOut 2s forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.container {
+    flex: 0 1 auto;                /* 占据剩余空间 */
+    max-width: 1200px;
+    width: 85%;
+    max-height: 90vh;         /* 限制最大高度 */
+    overflow-y: auto;         /* 添加垂直滚动条 */
+    margin: auto;      /* 保持水平居中 */
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+/* 添加漂亮的滚动条样式 */
+.container::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(200, 200, 200, 0.3);
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(129, 183, 90, 0.6);
+    border-radius: 4px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        justify-content: flex-start;  /* 移动端顶部对齐 */
+    }
+    
+    .container {
+        width: 95%;
+        max-height: 85vh;
+        margin: 10px auto;
+    }
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.user-info {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+    color: rgb(129, 183, 90);
+}
+
+/* 主内容区样式 */
+.main-content {
+    width: 700px;
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* 新增按钮容器样式 */
+.button-container {
+    justify-content: flex-end;
+    background: transparent !important;
+    padding: 15px 0 0 0 !important;
+}
+
+/* 调整按钮悬停效果 */
+.save-btn:hover {
+    background-color: rgb(129, 183, 90);
+    transform: translateX(5px);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 添加按钮过渡动画 */
+.save-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* 添加立体感 */
+}
+
+.save-btn:hover {
+    transform: translateX(5px);
+    /* 悬停右移效果 */
+    box-shadow: 0 6px 12px rgba(129, 183, 90, 0.8);
+    /* 添加光晕 */
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+.save-btn:active {
+    transform: scale(0.95);
+    /* 点击缩放效果 */
+}
+
+.info-label {
+    width: 120px;
+    color: #666;
+}
+
+.info-content {
+    color: #333;
+    flex: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+/* 活动状态样式 */
+.nav-item.active {
+    background-color: rgb(129, 183, 90);
+    color: white;
+}
+
+/* 内容区域切换动画 */
+.content-section {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.password-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.save-btn {
+    float: right;
+    background-color: rgb(129, 183, 90);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background-color: rgb(121, 169, 87);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+.logout-alert {
+    clear: both;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background: rgb(121, 169, 87);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeOut 2s forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.logout-container {
+    text-align: center;
+    margin: 30px 0;
+    width: 100%;
+}
+.logout {
+    display: block;
+    margin: auto;
+    background-color: aliceblue;
+    width: 20%;
+    padding: 2px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#back {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;       /* 减小尺寸更美观 */
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;  /* 关键属性 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    padding: 0;          /* 移除内边距 */
+    background: none;    /* 移除默认按钮背景 */
+}
+
+#back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;    /* 移除图片圆角 */
+    transition: transform 0.3s ease;
+}
+
+/* 添加悬停效果 */
+#back:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+#back:hover img {
+    transform: rotate(10deg);  /* 添加微旋转动画 */
+}
+
+.logout {
+    position: relative;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 36px;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #5a9233, #8eb981);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .logout-container {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .logout {
+        width: 80%;
+        max-width: 300px;
+        padding: 12px 20px;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: rippleEffect 1s linear;
+}
+
+@keyframes rippleEffect {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}

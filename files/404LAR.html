@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page</title>
+  <link rel="icon" href="../images/logo.png" sizes="32x32"/>
+  <style>
+    /* 用于居中弹出框的样式 */
+   .modal {
+      width: 60%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    .modal2{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    img{
+        width: 200px;
+        height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>404 Not Found</h1>
+  <p>页面走丢了T_T</p>
+  <button id="help - producer">助制作人一臂之力</button>
+  <button id="go - back">返回</button>
+
+  <script>
+    // 获取按钮元素
+    const helpProducerButton = document.getElementById('help - producer');
+    const goBackButton = document.getElementById('go - back');
+
+    // 助制作人一臂之力按钮点击事件
+    helpProducerButton.addEventListener('click', function () {
+      // 创建居中的弹出框
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.innerHTML = `
+        <img src="../images/weixin.jpg" alt="戴指导的微信支付二维码" title="戴指导的微信支付二维码">
+        <img src="../images/zhifubao.jpg" alt="戴指导的支付宝支付二维码" title="戴指导的支付宝支付二维码">
+        <img src="../images/weixin2.jpg" alt="何指导的微信支付二维码" title="何指导的微信支付二维码">
+        <img src="../images/zhifubao2.jpg" alt="何指导的支付宝支付二维码" title="何指导的支付宝支付二维码">
+        <button id="pay - done">支付完成</button>
+        <button id="pay - cancel">取消</button>
+      `;
+      document.body.appendChild(modal);
+
+      // 支付完成按钮点击事件
+      const payDoneButton = document.getElementById('pay - done');
+      payDoneButton.addEventListener('click', function () {
+        alert('感谢打赏ヾ (≧▽≦*) o ');
+        setTimeout(() => {
+          window.location.href = 'LAR.php';
+        }, 1000);
+      });
+
+      // 取消按钮点击事件
+      const payCancelButton = document.getElementById('pay - cancel');
+      payCancelButton.addEventListener('click', function () {
+        modal.remove();
+      });
+    });
+
+    // 返回按钮点击事件
+    goBackButton.addEventListener('click', function () {
+      // 创建居中的确认弹出框
+      const confirmModal = document.createElement('div');
+      confirmModal.classList.add('modal2');
+      confirmModal.innerHTML = `
+        真的要返回吗？真的不助制作人一臂之力吗？(╥╯^╰╥) 
+        <button id="really - go - back">真的 ┭┮﹏┭┮ </button>
+        <button id="fake - go - back">假的 o ((>ω<)) o</button>
+      `;
+      document.body.appendChild(confirmModal);
+
+      // 真的按钮点击事件
+      const reallyGoBackButton = document.getElementById('really - go - back');
+      reallyGoBackButton.addEventListener('click', function () {
+        alert('那好吧，拜拜~_~');
+        setTimeout(() => {
+          window.location.href = 'LAR.php';
+        }, 2000);
+      });
+
+      // 假的按钮点击事件
+      const fakeGoBackButton = document.getElementById('fake - go - back');
+      fakeGoBackButton.addEventListener('click', function () {
+        window.location.href = '404LAR.html';
+      });
+    });
+  </script>
+</body>
+
+</html>

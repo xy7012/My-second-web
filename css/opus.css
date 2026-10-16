@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '楷体', 'KaiTi', serif;
+}
+.shangchuanimage {
+    padding: 5px 10px;
+    margin:20px auto;
+    border-radius: 5px;
+    border: 1px;
+    font-size: 20px;
+    display: block;
+    background-color: #00B894;
+}
+body {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.opus ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 100px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.opus li {
+    text-align: center;
+    width: calc((100% - 40px) / 3);
+    margin-bottom: 2rem;
+    list-style-type: none;
+}
+
+.opus li img {
+    max-width: 65%;
+    height: auto;
+    object-fit: cover;
+}
+
+.opus li p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.opus li a {
+    text-decoration: none;
+    color: #233f27;
+}
+
+.opus li a:hover {
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+.opus li a:visited {
+    color: #233f27;
+    text-decoration: none;
+}
+
+.opus input[type="submit"] {
+    display: block;
+    margin: 100px auto;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+}
+/* 增删改按钮样式 */
+input[type="button"] {
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px;
+    font-size: 16px;
+}
+
+/* 修改 portfolio-item 样式，进一步拉长 */
+.portfolio-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    transition: transform 0.3s;
+    position: relative;
+    min-height: 450px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 图片区域 */
+.item-image {
+    flex: 0 0 45%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.item-image:hover img {
+    transform: scale(1.05);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 内容区域 */
+.item-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.item-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.item-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #00b894;
+}
+
+.item-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.item-tag {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* 更多按钮样式 */
+.more-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #00b894;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .item-image {
+        flex: none;
+    }
+
+    .item-title {
+        font-size: 1.5rem;
+    }
+}
+
+.wenan {
+    padding-top: 200px;
+    width: 100%;
+    padding: 1rem 10%;
+    text-indent: 2em;
+    margin-bottom: 100px;
+}
+
+.wenan .top {
+    margin-top: 40px;
+}
+
+.wenan .lef {
+    text-align: right;
+}
+
+.wenan p {
+    margin-top: 10px;
+}
+
+.wenan .bjtp {
+    margin: 0 auto;
+    width: 80%;
+    height: 150px;
+    background-image: url("../images/bjtp1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wenan .bjtp h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.button-box {
+    padding: 12px 18px;
+    margin: 8px 4px 0 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+/* 修改按钮样式 */
+input[type="button"][value="修改"] {
+    background-color: #3498db; /* 蓝色 */
+}
+
+/* 删除按钮样式 */
+input[type="button"][value="删除"] {
+    background-color: #e74c3c; /* 红色 */
+}
+
+/* 新增按钮样式 */
+input[type="button"][value="新增"] {
+    background-color: #2ecc71; /* 绿色 */
+    padding: 10px 25px;
+    margin: 30px auto;
+    display: block;
+    width: fit-content;
+}
+
+/* 悬停效果 */
+.button-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0.9;
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 活动状态效果 */
+.button-box:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 上传按钮样式 */
+.shangchuanimage {
+    padding: 10px 25px;
+    margin: 30px auto;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    display: block;
+    background-color: #00b894; /* 紫色 */
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: fit-content;
+}
+
+.shangchuanimage:hover {
+    cursor: url('../images/cursor.cur'),auto;
+    background-color: #00b894;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 国风按钮基础样式 */
+.button-box {
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    font-family: '楷体', 'KaiTi', serif;
+    letter-spacing: 1px;
+}
+
+/* 修改按钮 - 青色系 */
+input[value="修改"].button-box {
+    background-color: #e8f4ea;
+    color: #4a6b57;
+    border: 1px solid #c8d5b9;
+    box-shadow: 0 2px 5px rgba(72, 107, 87, 0.1);
+}
+
+input[value="修改"].button-box:hover {
+    background-color: #d4e8d7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(72, 107, 87, 0.2);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 删除按钮 - 红色系 */
+input[value="删除"].button-box {
+    background-color: #f9eaea;
+    color: #8c4a4a;
+    border: 1px solid #e0c4c4;
+    box-shadow: 0 2px 5px rgba(140, 74, 74, 0.1);
+}
+
+input[value="删除"].button-box:hover {
+    background-color: #f5d5d5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(140, 74, 74, 0.2);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 新增按钮 - 绿色系 */
+input[value="新增"].button-box {
+    background-color: #e8f4ea;
+    color: #4a6b57;
+    border: 1px solid #c8d5b9;
+    box-shadow: 0 2px 5px rgba(72, 107, 87, 0.1);
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+}
+
+input[value="新增"].button-box:hover {
+    background-color: #d4e8d7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(72, 107, 87, 0.2);
+    cursor: url('../images/cursor.cur'),auto;
+}
+
+/* 国风装饰元素 */
+.button-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.button-box:hover::before {
+    left: 100%;
+}
+.xmkg{
+    width: 100%;
+    height: 20px;
+}
